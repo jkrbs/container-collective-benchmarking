@@ -1,0 +1,17 @@
+Host container1
+IdentityFile ~/.ssh/docker_id_rsa
+Host container2
+IdentityFile ~/.ssh/docker_id_rsa
+Host container3
+IdentityFile ~/.ssh/docker_id_rsa
+Host container4
+IdentityFile ~/.ssh/docker_id_rsa
+Host container5
+IdentityFile ~/.ssh/docker_id_rsa
+Host container6
+IdentityFile ~/.ssh/docker_id_rsa
+Host container7
+IdentityFile ~/.ssh/docker_id_rsa
+Host container8
+IdentityFile ~/.ssh/docker_id_rsa
+
