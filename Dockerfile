@@ -3,7 +3,7 @@ FROM ubuntu AS img
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get install -y openssh-server wget openmpi-common openmpi-bin build-essential make mpi-default-dev && \
+    apt-get install -y openssh-server wget openmpi-common openmpi-bin build-essential make mpi-default-dev net-tools iproute2 iputils-ping && \
     mkdir /var/run/sshd
 
 # SSH server configuration.

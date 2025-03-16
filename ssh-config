@@ -1,17 +1,26 @@
 Host container1
 IdentityFile ~/.ssh/docker_id_rsa
+Hostname 10.1.101.2
 Host container2
 IdentityFile ~/.ssh/docker_id_rsa
+Hostname 10.1.102.2
 Host container3
 IdentityFile ~/.ssh/docker_id_rsa
+Hostname 10.1.103.2
 Host container4
 IdentityFile ~/.ssh/docker_id_rsa
+Hostname 10.1.104.2
+
 Host container5
 IdentityFile ~/.ssh/docker_id_rsa
+Hostname 10.2.201.2
 Host container6
 IdentityFile ~/.ssh/docker_id_rsa
+Hostname 10.2.102.2
 Host container7
 IdentityFile ~/.ssh/docker_id_rsa
+Hostname 10.2.203.2
 Host container8
 IdentityFile ~/.ssh/docker_id_rsa
+Hostname 10.2.204.2
 
