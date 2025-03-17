@@ -4,8 +4,8 @@ x-common-service: &common-service-template
   build:
     context: .
     dockerfile: Dockerfile
-  networks:
-    - my-net
+  privileged: true
+
 services:
   container1:
     <<: *common-service-template
@@ -13,44 +13,91 @@ services:
     ports:
       - "4022:22"
     command: /bin/bash -c "/setup.sh"
+    networks:
+      - tvlan101
 
   container2:
     <<: *common-service-template
     container_name: container2
+    command: /bin/bash -c "arp -s 10.1.102.1 04:f8:f8:dd:23:1c && /usr/sbin/sshd -D"
     ports:
       - "3022:22"
+    networks:
+      - tvlan102
+
   container3:
     <<: *common-service-template
     container_name: container3
+    command: /bin/bash -c "arp -s 10.1.103.1 04:f8:f8:dd:23:1c && /usr/sbin/sshd -D"
     ports:
       - "5022:22"
+    networks:
+      - tvlan103
+
   container4:
     <<: *common-service-template
     container_name: container4
+    command: /bin/bash -c "arp -s 10.1.104.1 04:f8:f8:dd:23:1c && /usr/sbin/sshd -D"
     ports:
       - "6022:22"
+    networks:
+      - tvlan104
+
   container5:
     <<: *common-service-template
     container_name: container5
+    command: /bin/bash -c "arp -s 10.2.201.1 04:f8:f8:dd:23:1c && /usr/sbin/sshd -D"
     ports:
       - "6122:22"
+    networks:
+      - tvlan201
+
   container6:
     <<: *common-service-template
     container_name: container6
+    command: /bin/bash -c "arp -s 10.2.202.1 04:f8:f8:dd:23:1c && /usr/sbin/sshd -D"
     ports:
       - "7022:22"
+    networks:
+      - tvlan202
+
+
   container7:
     <<: *common-service-template
     container_name: container7
+    command: /bin/bash -c "arp -s 10.2.203.1 04:f8:f8:dd:23:1c && /usr/sbin/sshd -D"
     ports:
       - "8022:22"
+    networks:
+      - tvlan203
+
   container8:
     <<: *common-service-template
     container_name: container8
+    command: /bin/bash -c "arp -s 10.2.204.1 04:f8:f8:dd:23:1c && /usr/sbin/sshd -D"
     ports:
       - "9022:22"
+    networks:
+      - tvlan204
+
 
 networks:
-  my-net:
+  tvlan101:
+    external: true
+  tvlan102:
+    external: true
+  tvlan103:
+    external: true
+  tvlan104:
+    external: true
+  tvlan201:
+    external: true
+  tvlan202:
+    external: true
+  tvlan203:
+    external: true
+  tvlan204:
+    external: true
+
 
 

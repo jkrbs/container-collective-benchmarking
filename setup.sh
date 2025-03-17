@@ -16,4 +16,4 @@ echo "====="
 export OMPI_ALLOW_RUN_AS_ROOT=1
 export OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1
 mpirun -hostfile /hostfile --mca routed direct -np 8 \
-	/libexec/osu-micro-benchmarks/mpi/collective/osu_alltoall
+	/libexec/osu-micro-benchmarks/mpi/collective/osu_alltoall -f -x 1000 -i 1000000 -z
